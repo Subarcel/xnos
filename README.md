@@ -22,14 +22,17 @@ On Windows with a multi-config generator, add `--config Release` or `--config De
 
 Run
 ---
+
+```shell
 ./build/iso-kernos --mode dashboard
 ./build/iso-kernos --compact
 ./build/iso-kernos --json --duration 5
 ./build/iso-kernos --test-mode --mode compact
-
+```
 Options
 ======
-Usage: iso-kernos [OPTIONS]
+Usage: xnos [OPTIONS]
+```bash
   -h, --help              Show help
   -v, --version           Show version
   -r, --refresh <ms>      Refresh rate in milliseconds
@@ -39,16 +42,18 @@ Usage: iso-kernos [OPTIONS]
       --duration <sec>    Stop after a fixed duration
       --test-mode         Collect once and exit
       --no-color          Disable ANSI color output
-
+```
 Structure
 ========
+src/
+├── core/       Interfaces, metric types, config, factory, collector
+├── platform/   Linux, Windows, and macOS native monitor implementations
+├── display/    Terminal renderers and formatters
+├── alerts/     Threshold evaluation and JSON logging
+└── utils/      Small shared utilities
 
-src/core/       Interfaces, metric types, config, factory, collector
-src/platform/   Linux, Windows, and macOS native monitor implementations
-src/display/    Terminal renderers and formatters
-src/alerts/     Threshold evaluation and JSON logging
-src/utils/      Small shared utilities
 tests/          Unit and integration tests
 docs/           Architecture, API, platform notes, contributing guide
+
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/API.md](docs/API.md) for details.
