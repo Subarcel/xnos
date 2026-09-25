@@ -45,6 +45,7 @@ Usage: xnos [OPTIONS]
 ```
 Structure
 ========
+```text
 src/
 ├── core/       Interfaces, metric types, config, factory, collector
 ├── platform/   Linux, Windows, and macOS native monitor implementations
@@ -54,6 +55,7 @@ src/
 
 tests/          Unit and integration tests
 docs/           Architecture, API, platform notes, contributing guide
+```
 
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/API.md](docs/API.md) for details.
